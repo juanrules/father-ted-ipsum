@@ -1,0 +1,50 @@
+.toggleSwitch {
+  min-width: 200px;
+  line-height: 1.6;
+  display: inline-block;
+  margin-right: 4rem;
+
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: 55px;
+    width: 50px;
+    height: 26px;
+    background: #ddd;
+    display: block;
+    border-radius: 21.25px;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  label:after {
+    content: "";
+    position: absolute;
+    top: 1.25px;
+    left: 1.5px;
+    width: 22.5px;
+    height: 22.5px;
+    background: #fff;
+    border-radius: 22.5px;
+    transition: 0.3s;
+  }
+
+  input:checked + label {
+    background: var(--primary-color);
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 1.25px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 32.5px;
+  }
+}

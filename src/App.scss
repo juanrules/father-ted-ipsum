@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap|Berkshire+Swash&display=swap");
+
+:root {
+  --primary-color: #2da379;
+  --accent-color: #fff55f;
+  --secondary-color: #008ff5;
+  --secondary-color-light: #008ff5;
+  --text-color: #7f8595;
+}
+
+::selection {
+  background-color: var(--accent-color);
+}
+
+$small-screen: 640px;
+
+body {
+  font-family: "Quicksand", sans-serif;
+  color: var(--text-color);
+  margin: 0;
+}
+.app {
+  display: grid;
+  grid-template-columns: minmax(288px, 15%) auto;
+  margin: auto;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (max-width: $small-screen) {
+    display: block;
+    position: initial;
+  }
+
+  main {
+    overflow-y: scroll;
+  }
+}
+
+.button {
+  border: 0;
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  border-radius: 1.5rem;
+  background-color: var(--secondary-color-light);
+  color: white;
+  font-weight: bold;
+}
