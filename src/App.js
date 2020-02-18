@@ -47,13 +47,13 @@ const App = () => {
               For the frontend, ReactJs is doing the trick with no backend
               required
             </p>
-            <p>
+            {/* <p>
               There are also unit tests to make sure everyhting is Honky dory
               everytime anything is changed in the code.
-            </p>
+            </p> */}
             <p>
-              I've also made the illustrations. This project was done to play
-              with all the above technologies.
+              {/* I've also made the illustrations. This project was done to play
+              with all the above technologies. */}
             </p>
           </Modal>
         )}
