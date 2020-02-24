@@ -1,3 +1,5 @@
+@import "../utilities/_breakpoints.scss";
+
 .toolbar {
   padding: 1rem;
   border-bottom: 1px solid #ddd;
@@ -7,4 +9,23 @@
   position: sticky;
   top: 0;
   background-color: white;
+
+  @include respondto(sm) {
+    justify-content: space-around;
+  }
+
+  &__filters {
+    @include respondto(sm) {
+      display: none;
+    }
+  }
+
+  &__actions {
+    @include respondto(sm) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }

@@ -8,7 +8,7 @@ export const paragrahpsCutter = (contentArray, chunk) => {
 
 const badWords = / feck | fuck | arse | fuck | ass | motherfucker | cunt | bitch | gobshite | dick | Arse /gi;
 
-export const badWordsRemover = content => content.replace(badWords, " ");
+const badWordsRemover = content => content.replace(badWords, " ");
 
 const latinWords = [
   "consectetur adipiscing elit",
@@ -105,8 +105,26 @@ const latinWords = [
   "dictum in dolor"
 ];
 
-export const latinWordsMixer = content => {
+const latinWordsMixer = content => {
   return content.reduce(function(arr, el, i) {
     return arr.concat(el, latinWords[i]);
   }, []);
+};
+
+/**
+ *
+ * @param {*} content
+ * @param {*} hasBadWords
+ * @param {*} hasLatinWords
+ */
+export const filterContent = (content, hasBadWords, hasLatinWords) => {
+  if (!hasBadWords) {
+    content = badWordsRemover(content);
+  }
+
+  if (!hasLatinWords) {
+    content = latinWordsMixer(content.split(/[.]/g)).join(". ");
+  }
+
+  return content;
 };
