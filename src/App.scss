@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap|Berkshire+Swash&display=swap");
+@import "utilities/_breakpoints.scss";
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Quicksand:300,400,700&display=swap");
 
 :root {
   --primary-color: #2da379;
@@ -27,7 +28,7 @@ body {
   height: 100%;
   width: 100%;
 
-  @media screen and (max-width: $small-screen) {
+  @include respondto(sm) {
     display: block;
     position: initial;
   }
