@@ -1,3 +1,5 @@
+@import "../utilities/_breakpoints.scss";
+
 .sidebar {
   background-color: var(--primary-color);
   padding: 2rem;
@@ -43,10 +45,18 @@
     font-weight: 300;
     margin-top: 0;
     text-align: right;
+
+    @include respondto(sm) {
+      text-align: center;
+    }
   }
   &__credits {
     margin-top: auto;
     line-height: 2;
     text-align: right;
+
+    @include respondto(sm) {
+      text-align: center;
+    }
   }
 }

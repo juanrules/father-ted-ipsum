@@ -16,7 +16,7 @@ const Toolbar = ({ getNewEpisode, filterBadWords, filterLatinWords }) => {
 
   return (
     <div className="toolbar">
-      <div>
+      <div className="toolbar__filters">
         <ToggleSwitch onclickFn={filterBadWords} id="badWordsSwitch">
           down with the filthy words
         </ToggleSwitch>
@@ -24,7 +24,7 @@ const Toolbar = ({ getNewEpisode, filterBadWords, filterLatinWords }) => {
           remove Latin words
         </ToggleSwitch>
       </div>
-      <div>
+      <div className="toolbar__actions">
         <Button onclickFn={getNewEpisode}>Get another episode</Button>
         <Button onclickFn={() => copy()}>{copyAllLabel}</Button>
       </div>
