@@ -1,0 +1,17 @@
+$breakpoints: (
+  "sm": 575.98px,
+  "md": 767.98px,
+  "lg": 991.98px,
+  "xl": 1199.98px
+);
+
+@mixin respondto($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
