@@ -28,8 +28,10 @@ const Sidebar = ({ toggleFn }) => {
         <br />
         with{" "}
         <button title="juan pernias website's url" onClick={() => toggleFn()}>
-          these tecnologies
+          these tecnologies.
         </button>
+        <br />
+        V0.2.0
       </p>
     </div>
   );
