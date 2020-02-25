@@ -6,7 +6,7 @@ export const paragrahpsCutter = (contentArray, chunk) => {
   return result;
 };
 
-const badWords = / feck | fuck | arse | fuck | ass | motherfucker | cunt | bitch | gobshite | dick | Arse /gi;
+const badWords = / feck | feck| arse | arse| fuck | arse | fuck | ass | motherfucker | cunt | bitch | gobshite | dick /gi;
 
 const badWordsRemover = content => content.replace(badWords, " ");
 
