@@ -1,3 +1,5 @@
+@import "../utilities/_breakpoints.scss";
+
 .modal {
   width: 600px;
   background-color: white;
@@ -13,6 +15,11 @@
   transform-origin: 0% 50%;
   opacity: 0;
   animation: rotateRightSideFirst 0.5s forwards ease-in-out;
+
+  @include respondTo(sm) {
+    width: 95%;
+    left: 2.5%;
+  }
 
   &__title {
     color: white;
