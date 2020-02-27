@@ -46,7 +46,7 @@
     margin-top: 0;
     text-align: right;
 
-    @include respondto(sm) {
+    @include respondTo(sm) {
       text-align: center;
     }
   }
@@ -55,7 +55,7 @@
     line-height: 2;
     text-align: right;
 
-    @include respondto(sm) {
+    @include respondTo(sm) {
       text-align: center;
     }
   }

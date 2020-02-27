@@ -10,18 +10,18 @@
   top: 0;
   background-color: white;
 
-  @include respondto(sm) {
+  @include respondTo(sm) {
     justify-content: space-around;
   }
 
   &__filters {
-    @include respondto(sm) {
+    @include respondTo(sm) {
       display: none;
     }
   }
 
   &__actions {
-    @include respondto(sm) {
+    @include respondTo(sm) {
       width: 100%;
       display: flex;
       align-items: center;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./sidebar.scss";
+import { version } from "./../../package.json";
 
 const Sidebar = ({ toggleFn }) => {
   return (
@@ -22,7 +23,7 @@ const Sidebar = ({ toggleFn }) => {
 
       <p className="sidebar__credits">
         Made by{" "}
-        <a href="https://thisjuanpernia.com" title="juan pernias website's url">
+        <a href="https://thisjuanpernia.com" title="Juan Pernia website's url">
           this Juan
         </a>
         <br />
@@ -31,7 +32,7 @@ const Sidebar = ({ toggleFn }) => {
           these tecnologies.
         </button>
         <br />
-        V0.2.0
+        {`v${version}`}
       </p>
     </div>
   );

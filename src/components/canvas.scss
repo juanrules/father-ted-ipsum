@@ -5,14 +5,14 @@
   padding: 3rem 4rem;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  @include respondto(sm) {
+  @include respondTo(sm) {
     padding: 1rem 3rem;
   }
 
   p {
     line-height: 1.5;
     font-size: 1.25rem;
-    @include respondto(sm) {
+    @include respondTo(sm) {
       font-size: 1rem;
     }
   }
