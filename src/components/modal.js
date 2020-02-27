@@ -6,7 +6,7 @@ const Modal = ({ children, toggleFn }) => {
     <>
       <div className="modal">
         {children}
-        <span class="modal__close" onClick={() => toggleFn()}>
+        <span className="modal__close" onClick={() => toggleFn()}>
           &#10006;
         </span>
       </div>
