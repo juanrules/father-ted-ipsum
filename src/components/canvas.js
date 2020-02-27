@@ -1,6 +1,10 @@
 import React from "react";
 import "./canvas.scss";
-import { paragrahpsCutter, filterContent } from "../utilities/strings";
+import {
+  paragrahpsCutter,
+  filterContent,
+  arrayToParagraphs
+} from "../utilities/strings";
 import PropTypes from "prop-types";
 
 const Canvas = ({
@@ -23,9 +27,8 @@ const Canvas = ({
       <span className="canvas__metaData">
         From: Season {season}, Episode {number}
       </span>
-      {getContent.map((e, i) => (
-        <p key={i}>{e}</p>
-      ))}
+
+      {arrayToParagraphs(getContent)}
     </div>
   );
 };
