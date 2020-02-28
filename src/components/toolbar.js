@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./button";
-import { selectElement } from "../utilities/clipboard";
 import ToggleSwitch from "./toggleSwitch";
 import "./toolbar.scss";
 
-const Toolbar = ({ getNewEpisode, filterBadWords, filterLatinWords }) => {
-  const [copyAllLabel, setCopyAllLabel] = useState("Copy all");
-  const copy = async () => {
-    selectElement(document.querySelector(".canvas"));
-    document.execCommand("copy");
-    setCopyAllLabel("Copied!");
-
-    setTimeout(() => setCopyAllLabel("Copy all"), 2000);
-  };
-
+const Toolbar = ({
+  getNewEpisode,
+  filterBadWords,
+  filterLatinWords,
+  copyAll
+}) => {
   return (
     <div className="toolbar">
       <div className="toolbar__filters">
@@ -26,7 +21,9 @@ const Toolbar = ({ getNewEpisode, filterBadWords, filterLatinWords }) => {
       </div>
       <div className="toolbar__actions">
         <Button onclickFn={getNewEpisode}>Get another episode</Button>
-        <Button onclickFn={() => copy()}>{copyAllLabel}</Button>
+        <Button onclickFn={() => copyAll()} cssClasses="primary">
+          Copy all
+        </Button>
       </div>
     </div>
   );
