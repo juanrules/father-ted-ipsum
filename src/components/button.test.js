@@ -12,9 +12,7 @@ describe("button component", () => {
     const mockFn = jest.fn();
     const instance = create(<Button onclickFn={mockFn}>Hello</Button>).root;
 
-    const button = instance.findByProps({
-      className: "button"
-    });
+    const button = instance.findByType("button");
 
     button.props.onClick();
     expect(mockFn).toHaveBeenCalled();
