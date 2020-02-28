@@ -1,0 +1,35 @@
+.messageBar {
+  background-color: var(--secondary-color);
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 85%;
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  visibility: hidden;
+
+  &.is-active {
+    animation: messageBar-slide-down 1.5s forwards ease-in-out;
+    visibility: visible;
+  }
+}
+
+@keyframes messageBar-slide-down {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}

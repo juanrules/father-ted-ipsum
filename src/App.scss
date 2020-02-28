@@ -7,12 +7,16 @@
   --secondary-color: #008ff5;
   --secondary-color-light: #008ff5;
   --text-color: #7f8595;
+  --light-grey: #ddd;
 }
 
 ::selection {
   background-color: var(--accent-color);
 }
 
+a {
+  color: var(--secondary-color);
+}
 $small-screen: 640px;
 
 body {
@@ -36,14 +40,4 @@ body {
   main {
     overflow-y: scroll;
   }
-}
-
-.button {
-  border: 0;
-  padding: 0.75rem 1rem;
-  margin-right: 1rem;
-  border-radius: 1.5rem;
-  background-color: var(--secondary-color-light);
-  color: white;
-  font-weight: bold;
 }
