@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import data from "./data/episodes";
 import { getEpisode } from "./services/dataHandler";
@@ -13,7 +13,12 @@ import MessageBar from "./components/messageBar";
 import { selectElement } from "./utilities/clipboard";
 
 const App = () => {
-  const [episode, setEpisode] = useState(getEpisode(data));
+  const [episode, setEpisode] = useState({
+    content: "",
+    name: "",
+    season: 0,
+    number: 0
+  });
   const [hasBadWords, setHasBadWords] = useState(true);
   const [hasLatinWords, setHasLatinWords] = useState(true);
   const [showCredits, setShowCredits] = useState(false);
@@ -25,6 +30,9 @@ const App = () => {
 
     setTimeout(() => setShowMessageBar(false), 2000);
   };
+
+  useEffect(() => setEpisode(getEpisode(data)), []);
+
   return (
     <>
       <Sidebar toggleFn={() => setShowCredits(!showCredits)} />
