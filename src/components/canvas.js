@@ -28,7 +28,7 @@ const Canvas = ({
         From: Season {season}, Episode {number}
       </span>
 
-      {arrayToParagraphs(getContent)}
+      {getContent && arrayToParagraphs(getContent)}
     </div>
   );
 };

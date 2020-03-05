@@ -7,6 +7,34 @@ export const paragrahpsCutter = (contentArray, chunk) => {
   return result;
 };
 
+export const latinWordsMixer = content =>
+  content.reduce(
+    (arr, el, i) =>
+      arr.concat(el, latinWords[Math.floor(Math.random() * latinWords.length)]),
+    []
+  );
+
+/**
+ *
+ * @param {*} content
+ * @param {*} hasBadWords
+ * @param {*} hasLatinWords
+ */
+export const filterContent = (content, removeLatinWords, removeBadWords) => {
+  if (removeLatinWords) {
+    content = badWordsRemover(content);
+  }
+
+  if (removeBadWords) {
+    content = latinWordRemover(content);
+  }
+
+  return content;
+};
+
+export const arrayToParagraphs = content =>
+  content.map((e, i) => <p key={i}>{e}</p>);
+
 const badWords = /\s?(feck|fecking|arse|arsing|fuck|fucking|ass|motherfucker|cunt|bitch|gobshite|dick)(\s|[^a-z])/gi;
 
 const badWordsRemover = content => content.replace(badWords, " ");
@@ -43,32 +71,9 @@ const latinWords = [
   "Donec egestas orci"
 ];
 
-const latinWordsMixer = content => {
-  return content.reduce(function(arr, el, i) {
-    return arr.concat(
-      el,
-      latinWords[i] || latinWords[Math.floor(Math.random() * latinWords.length)]
-    );
-  }, []);
-};
-
-/**
- *
- * @param {*} content
- * @param {*} hasBadWords
- * @param {*} hasLatinWords
- */
-export const filterContent = (content, hasBadWords, hasLatinWords) => {
-  if (!hasBadWords) {
-    content = badWordsRemover(content);
-  }
-
-  if (hasLatinWords) {
-    content = latinWordsMixer(content.split(/[.]/g)).join(" ");
-  }
-
+const latinWordRemover = content => {
+  latinWords.map(
+    el => (content = content.replace(new RegExp("(" + el + ")*", "gim"), ""))
+  );
   return content;
 };
-
-export const arrayToParagraphs = content =>
-  content.map((e, i) => <p key={i}>{e}</p>);
