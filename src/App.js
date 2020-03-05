@@ -10,7 +10,7 @@ import content from "./data/content";
 import { arrayToParagraphs } from "./utilities/strings";
 import License from "./components/license";
 import MessageBar from "./components/messageBar";
-import { selectElement } from "./utilities/clipboard";
+import { copyAll } from "./utilities/clipboard";
 
 const App = () => {
   const [episode, setEpisode] = useState({
@@ -19,17 +19,10 @@ const App = () => {
     season: 0,
     number: 0
   });
-  const [hasBadWords, setHasBadWords] = useState(true);
-  const [hasLatinWords, setHasLatinWords] = useState(true);
+  const [hasBadWords, setHasBadWords] = useState(false);
+  const [hasLatinWords, setHasLatinWords] = useState(false);
   const [showCredits, setShowCredits] = useState(false);
   const [showMessageBar, setShowMessageBar] = useState(false);
-  const copyAll = async () => {
-    selectElement(document.querySelector(".canvas"));
-    document.execCommand("copy");
-    setShowMessageBar(true);
-
-    setTimeout(() => setShowMessageBar(false), 2000);
-  };
 
   useEffect(() => setEpisode(getEpisode(data)), []);
 
@@ -41,7 +34,7 @@ const App = () => {
           getNewEpisode={() => setEpisode(getEpisode(data))}
           filterBadWords={() => setHasBadWords(!hasBadWords)}
           filterLatinWords={() => setHasLatinWords(!hasLatinWords)}
-          copyAll={() => copyAll()}
+          copyAll={() => copyAll(".canvas", setShowMessageBar)}
         />
         <Canvas
           {...episode}
