@@ -20,12 +20,12 @@ export const latinWordsMixer = content =>
  * @param {*} hasBadWords
  * @param {*} hasLatinWords
  */
-export const filterContent = (content, hasBadWords, hasLatinWords) => {
-  if (!hasBadWords) {
+export const filterContent = (content, removeLatinWords, removeBadWords) => {
+  if (removeLatinWords) {
     content = badWordsRemover(content);
   }
 
-  if (!hasLatinWords) {
+  if (removeBadWords) {
     content = latinWordRemover(content);
   }
 
