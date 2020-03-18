@@ -1,8 +1,12 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./sidebar.scss";
-import { version } from "./../../package.json";
+import { version } from "../../package.json";
 
-const Sidebar = ({ toggleFn }) => {
+interface iSidebar {
+  toggleFn: any;
+}
+
+const Sidebar: FunctionComponent<iSidebar> = ({ toggleFn }) => {
   return (
     <div className="sidebar">
       <div className="sidebar__logo">
