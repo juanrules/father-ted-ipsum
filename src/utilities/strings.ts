@@ -1,5 +1,4 @@
-import React from "react";
-export const paragrahpsCutter = (contentArray, chunk) => {
+export const paragrahpsCutter = (contentArray: string[], chunk: number) => {
   const result = [];
   while (contentArray.length) {
     result.push(contentArray.splice(0, chunk));
@@ -7,20 +6,18 @@ export const paragrahpsCutter = (contentArray, chunk) => {
   return result;
 };
 
-export const latinWordsMixer = content =>
+export const latinWordsMixer = (content: string[]): string[] =>
   content.reduce(
-    (arr, el, i) =>
+    (arr: string[], el, i) =>
       arr.concat(el, latinWords[Math.floor(Math.random() * latinWords.length)]),
     []
   );
 
-/**
- *
- * @param {*} content
- * @param {*} hasBadWords
- * @param {*} hasLatinWords
- */
-export const filterContent = (content, removeLatinWords, removeBadWords) => {
+export const filterContent = (
+  content: string,
+  removeLatinWords: boolean,
+  removeBadWords: boolean
+): string => {
   if (removeLatinWords) {
     content = badWordsRemover(content);
   }
@@ -32,12 +29,9 @@ export const filterContent = (content, removeLatinWords, removeBadWords) => {
   return content;
 };
 
-export const arrayToParagraphs = content =>
-  content.map((e, i) => <p key={i}>{e}</p>);
-
 const badWords = /\s?(feck|fecking|arse|arsing|fuck|fucking|ass|motherfucker|cunt|bitch|gobshite|dick)(\s|[^a-z])/gi;
 
-const badWordsRemover = content => content.replace(badWords, " ");
+const badWordsRemover = (content: string) => content.replace(badWords, " ");
 
 const latinWords = [
   "consectetur adipiscing elit",
@@ -71,9 +65,10 @@ const latinWords = [
   "Donec egestas orci"
 ];
 
-const latinWordRemover = content => {
-  latinWords.map(
-    el => (content = content.replace(new RegExp("(" + el + ")*", "gim"), ""))
+const latinWordRemover = (content: string): string => {
+  latinWords.forEach(
+    (el: string) =>
+      (content = content.replace(new RegExp("(" + el + ")*", "gim"), ""))
   );
   return content;
 };

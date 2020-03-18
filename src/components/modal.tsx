@@ -1,7 +1,12 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./modal.scss";
 
-const Modal = ({ children, toggleFn }) => {
+interface iModal {
+  children: any;
+  toggleFn: any;
+}
+
+const Modal: FunctionComponent<iModal> = ({ children, toggleFn }) => {
   return (
     <>
       <div className="modal">

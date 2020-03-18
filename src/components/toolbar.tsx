@@ -1,9 +1,16 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Button from "./button";
 import ToggleSwitch from "./toggleSwitch";
 import "./toolbar.scss";
 
-const Toolbar = ({
+interface iToolbar {
+  getNewEpisode: any;
+  filterBadWords: any;
+  filterLatinWords: any;
+  copyAll: any;
+}
+
+const Toolbar: FunctionComponent<iToolbar> = ({
   getNewEpisode,
   filterBadWords,
   filterLatinWords,
