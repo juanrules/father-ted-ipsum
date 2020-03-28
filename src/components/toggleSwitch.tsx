@@ -1,7 +1,17 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./toggleSwitch.scss";
 
-const ToggleSwitch = ({ onclickFn, children, id }) => {
+interface iToggleSwitch {
+  onclickFn: any;
+  children: any;
+  id: string;
+}
+
+const ToggleSwitch: FunctionComponent<iToggleSwitch> = ({
+  onclickFn,
+  children,
+  id
+}) => {
   return (
     <div className="toggleSwitch">
       <input type="checkbox" id={id} />

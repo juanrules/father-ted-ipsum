@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./license.scss";
 
-const license = () => (
+const license: FunctionComponent = () => (
   <aside className="license">
     This application is licensed under the{" "}
     <a href="https://github.com/juanrules/father-ted-ipsum/blob/master/LICENSE">

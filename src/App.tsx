@@ -7,7 +7,6 @@ import Toolbar from "./components/toolbar";
 import Sidebar from "./components/sidebar";
 import Modal from "./components/modal";
 import content from "./data/content";
-import { arrayToParagraphs } from "./utilities/strings";
 import License from "./components/license";
 import MessageBar from "./components/messageBar";
 import { copyAll } from "./utilities/clipboard";
@@ -50,7 +49,7 @@ const App = () => {
               <h3 className="modal__title">content.modal.title</h3>
             )}
             {content.modal.paragraphs &&
-              arrayToParagraphs(content.modal.paragraphs)}
+              content.modal.paragraphs.map((e, i) => <p key={i}>{e}</p>)}
             <p>
               <br />
               <a
