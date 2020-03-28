@@ -1,9 +1,10 @@
 .messageBar {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
   position: fixed;
   top: 0;
-  width: 85%;
+  left: 0;
+  width: 100%;
   padding: 1.5rem 0;
   font-size: 1.5rem;
   text-align: center;
