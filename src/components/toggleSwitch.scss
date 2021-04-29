@@ -16,7 +16,7 @@
     text-indent: 55px;
     width: 50px;
     height: 26px;
-    background: #ddd;
+    background-color: var(--toggle-switch-bg-color);
     display: block;
     border-radius: 21.25px;
     position: relative;
@@ -30,13 +30,17 @@
     left: 1.5px;
     width: 22.5px;
     height: 22.5px;
-    background: #fff;
+    background-color: var(--toggle-switch-bg-color-thumb);
     border-radius: 22.5px;
     transition: 0.3s;
   }
 
   input:checked + label {
-    background: var(--primary-color);
+    background-color: var(--toggle-switch-bg-color-active);
+
+    &::after {
+      background-color: var(--toggle-switch-bg-color-thumb-active);
+    }
   }
 
   input:checked + label:after {
