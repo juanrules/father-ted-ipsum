@@ -2,7 +2,7 @@
 
 .modal {
   width: 600px;
-  background-color: white;
+  background-color: var(--white);
   position: absolute;
   top: 20%;
   left: calc(50% - 300px);
@@ -14,7 +14,7 @@
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
   opacity: 0;
-  animation: rotateRightSideFirst 0.5s forwards ease-in-out;
+  animation: slideDown 0.5s forwards ease-in-out;
 
   @include respondTo(sm) {
     width: 95%;
@@ -22,7 +22,7 @@
   }
 
   &__title {
-    color: white;
+    color: var(--white);
     margin: 0;
     padding: 1.5rem;
     background-color: var(--primary-color);
@@ -36,13 +36,13 @@
     position: absolute;
     top: 1rem;
     right: 1.4rem;
-    color: white;
+    color: var(--white);
     font-size: 2rem;
     cursor: pointer;
   }
 }
 
-@keyframes rotateRightSideFirst {
+@keyframes slideDown {
   0% {
     transform: translateY(-100px);
   }
@@ -66,7 +66,7 @@
   height: 100%;
   opacity: 0;
   animation: backdropAnimation 0.25s forwards;
-  cursor: url("/close-icon.svg"), auto;
+  cursor: url("../img/close-icon.svg"), auto;
 }
 
 @keyframes backdropAnimation {
