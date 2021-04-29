@@ -1,7 +1,6 @@
 @import "../utilities/_breakpoints.scss";
 
 .canvas {
-  background-color: white;
   padding: 3rem 4rem;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
@@ -19,12 +18,12 @@
 
   &__title {
     font-size: 1.875rem;
-    color: var(--primary-color);
+    color: var(--canvas-title-color);
     margin-bottom: 0.4rem;
   }
 
   &__metaData {
-    color: #467162;
+    color: var(--canvas-subtitle-color);
     font-size: 1.25rem;
     font-weight: bold;
   }
