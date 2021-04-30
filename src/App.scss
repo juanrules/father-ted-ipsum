@@ -1,7 +1,7 @@
 @import "utilities/_breakpoints.scss";
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Quicksand:300,400,700&display=swap");
 
-:root {
+.app {
   --primary-color: #2da379;
   --accent-color: #fff55f;
   --secondary-color: #008ff5;
@@ -10,8 +10,9 @@
   --light-grey: #ddd;
   --selection-color: #e3ffdd;
   --white: #fff;
-  --bg-color: #fff;
-  --toolbar-bg-color: #fff;
+  --bg-color: var(--white);
+  --canvas-bg-color: var(--white);
+  --toolbar-bg-color: var(--white);
   --canvas-title-color: var(--primary-color);
   --canvas-subtitle-color: #467162;
   --toolbar-border-color: var(--light-grey);
@@ -21,27 +22,27 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #07263e;
-    --accent-color: #56ff63;
-    --secondary-color: #008ff5;
-    --secondary-color-light: #008ff5;
-    --text-color: #9dc2dc;
-    --light-grey: #ddd;
-    --selection-color: #07263e;
-    --bg-color: #0c2c44;
-    --white: #fff;
-    --toolbar-bg-color: #052235;
-    --canvas-title-color: #56ff63;
-    --canvas-subtitle-color: #5f9ac3;
-    --toolbar-border-color: #143e5a;
-    --toggle-switch-bg-color: #1e4a6d;
-    --toggle-switch-bg-color-active: #56ff63;
-    --toggle-switch-bg-color-thumb: #2b76a7;
-    --toggle-switch-bg-color-thumb-active: #085f10;
-    --sidebar-font-color: var(--text-color);
-  }
+
+.app.dark {
+  --primary-color: #07263e;
+  --accent-color: #56ff63;
+  --secondary-color: #008ff5;
+  --secondary-color-light: #008ff5;
+  --text-color: #9dc2dc;
+  --light-grey: #ddd;
+  --selection-color: #5f9ac3;
+  --canvas-bg-color: #0c2c44;
+  --white: #fff;
+  --bg-color: var(--canvas-bg-color);
+  --toolbar-bg-color: #052235;
+  --canvas-title-color: #56ff63;
+  --canvas-subtitle-color: #5f9ac3;
+  --toolbar-border-color: #143e5a;
+  --toggle-switch-bg-color: #1e4a6d;
+  --toggle-switch-bg-color-active: #56ff63;
+  --toggle-switch-bg-color-thumb: #2b76a7;
+  --toggle-switch-bg-color-thumb-active: #085f10;
+  --sidebar-font-color: var(--text-color);
 }
 
 ::selection {
@@ -56,12 +57,11 @@ $small-screen: 640px;
 
 body {
   font-family: "Quicksand", sans-serif;
-  color: var(--text-color);
   margin: 0;
-  background-color: var(--bg-color);
 }
 .app {
   display: grid;
+  color: var(--text-color);
   grid-template-columns: minmax(288px, 15%) auto;
   margin: auto;
   position: fixed;
