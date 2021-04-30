@@ -9,6 +9,7 @@ const license: FunctionComponent = () => (
     </a>{" "}
     | All Episode's scripts and Father Ted branding rights belongs to their
     owners.
+    | aaaand Icons are from <a href="https://fontawesome.com/license" target="_blank" rel="noreferrer">FontAwesome.</a>
   </aside>
 );
 

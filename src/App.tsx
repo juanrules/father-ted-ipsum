@@ -10,6 +10,9 @@ import content from "./data/content";
 import License from "./components/license";
 import MessageBar from "./components/messageBar";
 import { copyAll } from "./utilities/clipboard";
+import { setColourScheme, toggleTheme } from "./utilities/handleColourScheme";
+
+
 
 const App = () => {
   const [episode, setEpisode] = useState({
@@ -22,12 +25,21 @@ const App = () => {
   const [hasLatinWords, setHasLatinWords] = useState(false);
   const [showCredits, setShowCredits] = useState(false);
   const [showMessageBar, setShowMessageBar] = useState(false);
+  const [isDarkTheme, setDarkTheme] = useState(false);
 
-  useEffect(() => setEpisode(getEpisode(data)), []);
+  useEffect(() => {
+    const isPrefColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    setColourScheme(isPrefColorSchemeDark, localStorage.isDarkTheme, setDarkTheme);
+
+    setEpisode(getEpisode(data))
+
+  }, [isDarkTheme]);
 
   return (
-    <>
-      <Sidebar toggleFn={() => setShowCredits(!showCredits)} />
+    <div className={`app ${isDarkTheme ? "dark" : ""}`}>
+      <Sidebar toggleFn={() => setShowCredits(!showCredits)} toggleTheme={() => toggleTheme(isDarkTheme, setDarkTheme)}
+        isDarkTheme={isDarkTheme} />
       <main>
         <Toolbar
           getNewEpisode={() => setEpisode(getEpisode(data))}
@@ -63,7 +75,7 @@ const App = () => {
         )}
         <MessageBar show={showMessageBar} />
       </main>
-    </>
+    </div>
   );
 };
 

@@ -40,7 +40,21 @@
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
+  &__actions {
+    @include respondTo(sm) {
+      display: none;
+    }
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    .toggleSwitch {
+      min-width: initial;
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+  }
   &__description {
     font-weight: 300;
     margin-top: 0;
@@ -51,6 +65,10 @@
     }
   }
   &__credits {
+    content-visibility: auto;
+    @include respondTo(sm) {
+      display: none;
+    }
     margin-top: auto;
     line-height: 2;
     text-align: right;

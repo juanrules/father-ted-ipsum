@@ -4,8 +4,10 @@
   padding: 3rem 4rem;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+  background-color: var(--canvas-bg-color);
+
   @include respondTo(sm) {
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
   }
 
   p {
