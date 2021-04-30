@@ -5,16 +5,18 @@ interface iToggleSwitch {
   onclickFn: any;
   children: any;
   id: string;
+  isChecked?: boolean
 }
 
 const ToggleSwitch: FunctionComponent<iToggleSwitch> = ({
   onclickFn,
   children,
-  id
+  id,
+  isChecked = false
 }) => {
   return (
     <div className="toggleSwitch">
-      <input type="checkbox" id={id} />
+      <input type="checkbox" id={id} checked={isChecked} readOnly />
       <label
         htmlFor={id}
         onClick={() => onclickFn()}
