@@ -44,6 +44,8 @@ const App = () => {
         <Toolbar
           getNewEpisode={() => setEpisode(getEpisode(data))}
           filterBadWords={() => setHasBadWords(!hasBadWords)}
+          hasBadWords={hasBadWords}
+          hasLatinWords={hasLatinWords}
           filterLatinWords={() => setHasLatinWords(!hasLatinWords)}
           copyAll={() => copyAll(".canvas", setShowMessageBar)}
         />

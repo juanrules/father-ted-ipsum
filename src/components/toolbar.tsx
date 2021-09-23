@@ -4,25 +4,32 @@ import ToggleSwitch from "./toggleSwitch";
 import "./toolbar.scss";
 
 interface iToolbar {
-  getNewEpisode: any;
-  filterBadWords: any;
-  filterLatinWords: any;
-  copyAll: any;
+  getNewEpisode: Function;
+  filterBadWords: Function;
+  filterLatinWords: Function;
+  copyAll: Function;
+  hasLatinWords: boolean;
+  hasBadWords: boolean;
 }
 
 const Toolbar: FunctionComponent<iToolbar> = ({
   getNewEpisode,
   filterBadWords,
   filterLatinWords,
+  hasLatinWords,
+  hasBadWords,
   copyAll
 }) => {
   return (
     <div className="toolbar">
       <div className="toolbar__filters">
-        <ToggleSwitch onclickFn={filterBadWords} id="badWordsSwitch">
+        <ToggleSwitch onclickFn={filterBadWords} isChecked={hasBadWords} id="badWordsSwitch">
           down with the filthy words
         </ToggleSwitch>
-        <ToggleSwitch onclickFn={filterLatinWords} id="LatinWordsSwitch">
+        <ToggleSwitch
+          onclickFn={filterLatinWords}
+          isChecked={hasLatinWords}
+          id="LatinWordsSwitch">
           remove Latin words
         </ToggleSwitch>
       </div>

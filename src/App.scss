@@ -17,6 +17,8 @@
   --canvas-subtitle-color: #467162;
   --toolbar-border-color: var(--light-grey);
   --toggle-switch-bg-color: var(--light-grey);
+  --toggle-switch-bg-color-active: var(--primary-color);
+  --toggle-switch-bg-color-thumb-active: #fff;
   --toggle-switch-bg-color-thumb: var(--white);
   --sidebar-font-color: var(--white);
 }
@@ -29,7 +31,7 @@
   --secondary-color: #008ff5;
   --secondary-color-light: #008ff5;
   --text-color: #9dc2dc;
-  --light-grey: #ddd;
+  --light-grey: #052235;
   --selection-color: #5f9ac3;
   --canvas-bg-color: #0c2c44;
   --white: #fff;
