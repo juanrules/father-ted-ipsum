@@ -30,7 +30,7 @@ const App = () => {
   useEffect(() => {
     const isPrefColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    setColourScheme(isPrefColorSchemeDark, localStorage.isDarkTheme, setDarkTheme);
+    setColourScheme(isPrefColorSchemeDark, localStorage.isDarkTheme || "false", setDarkTheme);
 
     setEpisode(getEpisode(data))
 
@@ -44,6 +44,8 @@ const App = () => {
         <Toolbar
           getNewEpisode={() => setEpisode(getEpisode(data))}
           filterBadWords={() => setHasBadWords(!hasBadWords)}
+          hasBadWords={hasBadWords}
+          hasLatinWords={hasLatinWords}
           filterLatinWords={() => setHasLatinWords(!hasLatinWords)}
           copyAll={() => copyAll(".canvas", setShowMessageBar)}
         />

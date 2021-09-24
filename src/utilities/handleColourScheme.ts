@@ -1,6 +1,6 @@
 export const setColourScheme = (
   userPrefs: boolean,
-  isDarkTheme: "true",
+  isDarkTheme: string,
   callback: any
 ) => {
   if ((userPrefs && !isDarkTheme) || JSON.parse(isDarkTheme) === true) {

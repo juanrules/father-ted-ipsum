@@ -5,7 +5,7 @@ interface iToggleSwitch {
   onclickFn: any;
   children: any;
   id: string;
-  isChecked?: boolean
+  isChecked: boolean
 }
 
 const ToggleSwitch: FunctionComponent<iToggleSwitch> = ({
