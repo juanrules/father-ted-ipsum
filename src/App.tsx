@@ -30,7 +30,7 @@ const App = () => {
   useEffect(() => {
     const isPrefColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    setColourScheme(isPrefColorSchemeDark, localStorage.isDarkTheme, setDarkTheme);
+    setColourScheme(isPrefColorSchemeDark, localStorage.isDarkTheme || "false", setDarkTheme);
 
     setEpisode(getEpisode(data))
 
